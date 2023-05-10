@@ -1,6 +1,12 @@
+
 body {
 	font-family: Kalam, cursive;
 	background-color: #f1fbff;
+}
+
+.ayrac{
+    font-size: 15px;
+    margin: 0px 2px;
 }
 
 *{
@@ -16,8 +22,15 @@ font-family: kalam,cursive ;
     min-height: 300px;
 }
 
+
+.carousel-item img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
 .carousel-caption{
-    bottom: 220px;
+    bottom: 200px;
     z-index: 2;
 }
 
@@ -54,6 +67,9 @@ font-size: 15px;
 text-transform: uppercase;
 font-weight: 500;
 }
+.nav-item a:hover{
+    color: aquamarine;
+    }
 
 
 .navbar-dark .navbar-brand{
@@ -67,13 +83,13 @@ font-weight: 500;
 
 .navbar-dark .navbar-brand:focus,.navbar-dark .navbar-brand:hover{
     color: #000;
-   
-    
+
+
 }
 
 .navbar-dark .navbar-nav  .navbar-Link{
-    color: #000;    
-    
+    color: #000;
+
 }
 
 .w-100{
@@ -82,6 +98,9 @@ font-weight: 500;
 }
 
 @media only screen and (min-width:768px) and (max-width:991px) {
+    .ayrac{
+        display: none;
+    }
     .section-padding {
         padding: 50px 0;
     }
@@ -94,17 +113,11 @@ font-weight: 500;
         height: auto;
     }
     .navbar-toggler-icon {
-        width: 15px;
+        width: 25px;
     }
-    .navbar-dark .navbar-brand img {
-        width: 65px;
-        height: 65px;
-    }
-    .navbar-dark .navbar-brand {
-        font-size: 50px;
-    }
+
     .carousel-caption {
-        bottom: 150px;
+        bottom: 125px;
     }
     .carousel-caption h5 {
         font-size: 30px;
@@ -131,10 +144,26 @@ font-weight: 500;
         left: 0;
         content: "";
     }
+    .nav-item a:hover{
+        color: aquamarine;
+        }
+
+
 }
 
 
 @media only screen and (max-width:767px){
+    .ayrac{
+        display: none;
+    }
+
+    .carousel-item img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+    
+    
     .section-padding {
         padding: 50px 0;
       }
@@ -148,15 +177,9 @@ font-weight: 500;
     .navbar-toggler-icon{
         width: 15px;
     }
-    .navbar-dark .navbar-brand img {
-            width: 0;   
-     }
 
-    .navbar-dark .navbar-brand {
-        font-size: 18px;
-      }
     .carousel-caption{
-    bottom: 150px;
+    bottom: 50px;
     }
 
     .carousel-caption h5 {
@@ -171,7 +194,7 @@ font-weight: 500;
         width: 80%;
         line-height: 1.6;
         font-size: 16px ;
-        
+
     }
     .carousel-item {
         height: 70%;
@@ -182,11 +205,12 @@ font-weight: 500;
         z-index: 1;
         width: 100%;
 
+
         position: absolute;
         bottom: 0;
         left: 0;
         content: "";
-        
+
         }
-    
+
 }
