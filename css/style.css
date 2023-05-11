@@ -1,27 +1,89 @@
+/* GENEL */
 
 body {
-	font-family: Kalam, cursive;
+	
 	background-color: #f1fbff;
 }
 
+*{
+    font-family: kalam,cursive ;
+    }
+
+    
+.w-100{
+    height: 100vh;
+
+}
+
+/* GENEL */
+
+/* FOOTER */
+
+.footer {
+    display: block;
+    background-color: #212529;
+    text-align: center;
+    transition: transform 0.3s ease;
+    
+  
+}
+
+.footer i {
+    font-size: 30px;
+    padding-top: 15px;
+}
+
+.footer i:hover{
+    transform: scale(1.2); 
+    opacity: 85%;
+}
+
+/* FOOTER */
+
+/* NAVBAR */
+
+.navbar.nav a{
+    font-size: 15px;
+    text-transform: uppercase;
+    font-weight: 500;
+    }
+
+.nav-item a:hover{
+    color: #14EE81;
+    }
+
+.navbar-dark .navbar-brand{
+    color: #000;
+    font-size: 27px;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 2px;
+
+}
+
+.navbar-dark .navbar-brand:focus,.navbar-dark .navbar-brand:hover{
+    color: #000;
+}
+
+.navbar-dark .navbar-nav  .navbar-Link{
+    color: #000;
+
+}
+    
 .ayrac{
+    
     font-size: 15px;
     margin: 0px 2px;
 }
 
-*{
-font-family: kalam,cursive ;
-}
+/* NAVBAR */
 
-.section-padding{
-    padding: 100px 0;
-}
+/* SLİDERS */
 
 .carousel-item{
     height: 100vh;
     min-height: 300px;
 }
-
 
 .carousel-item img {
     height: 100%;
@@ -62,40 +124,42 @@ font-family: kalam,cursive ;
     z-index: 1;
 }
 
-.navbar.nav a{
-font-size: 15px;
-text-transform: uppercase;
-font-weight: 500;
-}
-.nav-item a:hover{
-    color: aquamarine;
-    }
-
-
-.navbar-dark .navbar-brand{
-    color: #000;
-    font-size: 27px;
-    text-transform: uppercase;
-    font-weight: 700;
-    letter-spacing: 2px;
-
+.carousel-control-next i {
+    padding-left: 50px;
+    font-size: 25px;
 }
 
-.navbar-dark .navbar-brand:focus,.navbar-dark .navbar-brand:hover{
-    color: #000;
-
-
+.carousel-control-prev i {
+    padding-right: 50px;
+    font-size: 25px;
 }
 
-.navbar-dark .navbar-nav  .navbar-Link{
-    color: #000;
+/* SLİDERS  */
 
+/* HAKKIMDA */
+
+.hakkimda {
+    padding: 64px 0;}
+
+ .hakkimda h2.s-heading {
+    font-size: 50px;
+    margin-top: 0;
+    margin-bottom: 20px;}
+
+ .hakkimda h3.s-subheading {
+    font-size: 20px;
+    font-weight: 600;
+    font-style: italic;
 }
 
-.w-100{
-    height: 100vh;
-
+.hakkimda img.rounded-circle{
+width: 300px;
+height: 300px;
+object-fit: cover;
 }
+/* HAKKIMDA */
+
+/* TABLET RESPONSİVE */
 
 @media only screen and (min-width:768px) and (max-width:991px) {
     .ayrac{
@@ -117,7 +181,7 @@ font-weight: 500;
     }
 
     .carousel-caption {
-        bottom: 125px;
+        bottom: 130px;
     }
     .carousel-caption h5 {
         font-size: 30px;
@@ -145,14 +209,19 @@ font-weight: 500;
         content: "";
     }
     .nav-item a:hover{
-        color: aquamarine;
+        color: #14EE81;
         }
 
 
 }
 
+/* TABLET RESPONSİVE */
+
+/* MOBİL RESPONSİVE */
 
 @media only screen and (max-width:767px){
+
+    
     .ayrac{
         display: none;
     }
@@ -170,6 +239,11 @@ font-weight: 500;
     .navbar-nav{
         text-align: center;
     }
+
+    .navbar-dark .navbar-brand {
+        
+        font-size: 18px;}
+
     .navbar-toggler{
         width: auto;
         height: auto;
@@ -183,7 +257,7 @@ font-weight: 500;
     }
 
     .carousel-caption h5 {
-        font-size: 30px;
+        font-size: 25px;
 
     }
 
@@ -204,13 +278,39 @@ font-weight: 500;
         background: rgba(0, 0, 0, 0.7);
         z-index: 1;
         width: 100%;
-
-
-        position: absolute;
         bottom: 0;
         left: 0;
         content: "";
 
         }
+        footer {
+            bottom: 0;
+            left: 0;
+            width: 100%;
+        }
+
+
+        .hakkimda {
+            padding: 40px 0;}
+        
+         .hakkimda h2.s-heading {
+            font-size: 40px;
+            text-align: center;
+            margin-top: 0;
+            margin-bottom: 20px;}
+        
+         .hakkimda h3.s-subheading {
+            font-size: 16px;
+            font-weight: 400;
+            font-style: italic;
+        }
+        
+        .hakkimda img.rounded-circle{
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
+        }
 
 }
+
+/* MOBİL RESPONSİVE */
