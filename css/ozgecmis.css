@@ -1,0 +1,5 @@
+.header_figure img.rounded-circle{
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    }
