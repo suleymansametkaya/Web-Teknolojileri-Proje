@@ -40,6 +40,7 @@
     left: 0;
     background: rgba(0, 0, 0, 0.7);
     z-index: 1;
+    pointer-events: none;
 }
 
 .carousel-control-next i {
@@ -52,30 +53,7 @@
     font-size: 25px;
 }
 
-/* SLİDERS  */
 
-/* HAKKIMDA */
-
-.hakkimda {
-    padding: 64px 0;}
-
- .hakkimda h2.s-heading {
-    font-size: 50px;
-    margin-top: 0;
-    margin-bottom: 20px;}
-
- .hakkimda h3.s-subheading {
-    font-size: 20px;
-    font-weight: 600;
-    font-style: italic;
-}
-
-.hakkimda img.rounded-circle{
-width: 300px;
-height: 300px;
-object-fit: cover;
-}
-/* HAKKIMDA */
 
 /* TABLET RESPONSİVE */
 
@@ -111,17 +89,6 @@ object-fit: cover;
 }
 
 /* TABLET RESPONSİVE */
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -164,26 +131,4 @@ object-fit: cover;
     content: "";
 
     }
-    .hakkimda {
-        padding: 40px 0;
-    }
-    
-    .hakkimda h2.s-heading {
-    font-size: 40px;
-    text-align: center;
-    margin-top: 0;
-    margin-bottom: 20px;
-    }
-
-    .hakkimda h3.s-subheading {
-    font-size: 16px;
-    font-weight: 400;
-    font-style: italic;
-    }
-
-    .hakkimda img.rounded-circle{
-    width: 200px;
-    height: 200px;
-    object-fit: cover;
-    }   
 }
