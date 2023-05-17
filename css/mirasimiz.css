@@ -1,0 +1,145 @@
+.mirasimiz-baslik{
+    text-align: center;
+    padding-top: 20px;
+    text-transform: uppercase;    
+}
+
+.mirasimiz-baslik hr{
+    border: none;
+    border-top: 3px solid #343a40;
+    max-width: 800px;
+    padding-bottom: 20px;
+    margin: 25px auto;
+    color: black;
+}
+
+.mirasimiz-icerik{
+    align-items: center;
+    padding-left: 10px;
+
+}
+.mirasimiz-icerik p{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 18px;
+}
+
+.tanitim{
+    position: relative;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+.tanitim p {
+    padding: 10px;
+}
+
+.pamukkale{
+    width: 300px;
+    top:0;
+    border-radius: 10%;
+    padding: 5px;
+    background-color: #002A3B;
+    transition: transform 0.3s ease;
+}
+
+.pamukkale:hover{
+    transform: scale(1.2);
+}
+
+.ana-icerik-1{
+    margin-top: 20px;  
+}
+
+.ana-icerik-2{
+    position: relative;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    padding-right: 5px;
+}
+.ana-icerik-2 .hierapolis{
+    width: 300px;
+    height: 267.5px;
+    border-radius: 10%;
+    padding: 5px;
+    background-color: #002A3B;
+    margin-bottom: 50px;
+    margin-right: 10px;
+    transition: transform 0.3s ease;
+    
+}
+
+.ana-icerik-2 .hierapolis:hover{
+    transform: scale(1.2);
+}
+
+.ana-icerik-3 li{
+    font-size: 18px;
+}
+
+.foto-galeri{
+    width: 100%;
+    display: grid;
+    margin-bottom: 30px;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fit,300px);
+    gap: 10px;
+}
+
+.foto-galeri img:hover{
+    transform: scale(1.2);
+    
+}
+
+.foto-galeri img{
+    height: 267.5px;
+    width: 300px;
+    background-color: #002A3B;
+    padding: 5px;
+    opacity: 100%;
+    border-radius: 5%;
+    transition: transform 0.3s ease;
+}   
+
+
+
+@media (max-width: 767px) {
+    .mirasimiz-baslik h1{
+        font-size: 25px;
+        padding-top: 20px;
+    }
+
+    .mirasimiz-baslik hr{
+        max-width: 470px;
+        padding-bottom: 20px;
+    }
+
+    .tanitim{
+        display: block;
+    }
+    
+
+    .pamukkale{
+        width: 450px;
+        margin-left: 37px;
+       
+    }
+
+    .ana-icerik-2{
+        display: block;
+    }
+
+    .ana-icerik-2 .hierapolis{
+        width: 450px;
+        margin-left: 37px;
+    }
+
+    .foto-galeri{
+        grid-template-columns: repeat(1,auto);
+    }
+
+    .foto-galeri img{
+        width: 450px;
+    }
+}

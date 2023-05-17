@@ -10,7 +10,7 @@
 }
 
 .carousel-caption{
-    bottom: 200px;
+    bottom: 300px;
     z-index: 2;
 }
 
@@ -53,13 +53,33 @@
     font-size: 25px;
 }
 
+.tanitim h3{
+text-align: left;
+}
+
+.gezilecek h3{
+    text-align: left;
+}
+
+.yemek h3{
+    text-align: left;
+}
+
+.denizlispor h3{
+    text-align: left;
+}
+
+.alt-cizgi{
+    text-decoration: none;
+}
+
 
 
 /* TABLET RESPONSİVE */
 
 @media only screen and (min-width:768px) and (max-width:991px) {
     .carousel-caption {
-        bottom: 130px;
+        bottom: 170px;
     }
     .carousel-caption h5 {
         font-size: 30px;
@@ -101,7 +121,7 @@
         object-fit: cover;
     }
     .carousel-caption{
-        bottom: 50px;
+        bottom: 100px;
         }
     
     .carousel-caption h5 {
