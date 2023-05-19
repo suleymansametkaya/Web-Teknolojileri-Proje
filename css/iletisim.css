@@ -1,0 +1,149 @@
+
+.iletisim-container{
+    display: flex;
+    justify-content: center;
+    background-image: url(/img/formbg2.jpg);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+
+
+.iletisim-panel{
+    width: 700px;
+    margin-top: 205px;
+    margin-bottom: 250px;
+    z-index: 2;
+    position: relative; 
+    color: #ffff;
+}
+
+.iletisim-panel h1{
+    text-align: center;
+    padding-top: 10px;
+}
+
+
+.iletisim-panel::before{
+    content:"" ;
+    position: absolute;
+    width: 700px;
+    height: 500px;
+    border-radius: 30px;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: -1;
+    pointer-events: none;
+}
+
+.iletisim-form{
+    align-items: center;
+    justify-content: center;
+    height: 450px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.iletisim-form h2{
+    text-align: center;
+    padding-top: 20px;
+    color: #ffffff;
+}
+
+fieldset{text-align: center;}
+
+.form-isim{
+    text-align: center;
+    width: 100%;
+    border-radius: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.form-telefon{
+    text-align: center;
+    width: 100%;
+    border-radius: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.form-email{
+    text-align: center;
+    width: 100%;
+    border-radius: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.form-sehir{
+    text-align: center;
+    width: 100%;
+    border-radius: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+
+.form-yetenek{
+    width: 100%;
+    padding-top: 5px;
+    text-align: center;
+}
+
+.row{
+    padding-top: 5px;
+}
+
+.form-mesaj{
+    padding-top: 5px;
+    text-align: center;
+}
+
+.form-mesaj-baslik{
+    padding-top: 5px;
+    
+}
+.form-mesaj-baslik input{
+    text-align: center;
+    width: 100%;
+    border-radius: 10px;
+}
+
+
+.form-mesaj textarea{
+    text-align: center  ;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.form-dosya{
+    padding-top: 5px;
+    text-align: left;
+}
+
+.form-dosya input{
+    width: 200px;
+}
+
+.gonder-buton{
+    border-radius: 10px;
+    text-align: center;
+    width: 120px;
+    transition: transform 0.3s ease;    
+}
+
+.gonder-buton:hover{
+    transform: scale(1.2);
+}
+
+.temizle-buton{
+    border-radius: 10px;
+    text-align: center;
+    width: 120px;
+    transition: transform 0.3s ease;    
+}
+
+.temizle-buton:hover{
+    transform: scale(1.2);
+    
+}
