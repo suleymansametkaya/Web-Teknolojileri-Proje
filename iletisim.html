@@ -16,13 +16,13 @@
     <title>Süleyman Samet KAYA</title>
   </head>
   <body>
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
-    
-
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <!-- NAVBAR -->
 
 <div class="ust"><nav class="navbar navbar-expand-lg navbar-dark bg-dark">      
@@ -74,34 +74,44 @@
 
 <div class="iletisim-container">
   <div class="iletisim-panel">
-    <div class="iletisim-form">
+    <div id="app" class="iletisim-form">
       <form action="form.php" method="post">
         <fieldset>
           <legend><h2>İletişim Formu</h2><hr></legend>
-          <input class="form-isim" type="text" id="ad-soyad" name="ad-soyad" placeholder="Adınızı ve Soyadınızı Giriniz">
+          <input v-model="formData.adSoyad" class="form-isim" type="text" id="ad-soyad" name="ad-soyad" placeholder="Adınızı ve Soyadınızı Giriniz">
+          <div v-if="errors.adSoyad" class="error">{{ errors.adSoyad }}</div>
+          <div id="error-isim" class="error-isim"></div>
           <div class="row">
             <div class="col-6">
-                <input class="form-telefon" type="tel" name="telefon" id="telefon" placeholder="Telefonunuz">
-            </div>
+                <input v-model="formData.telefon" class="form-telefon" type="tel" name="telefon" id="telefon" placeholder="Telefonunuz">
+                <div v-if="errors.telefon" class="error">{{ errors.telefon }}</div>
+                <div id="error-telefon" class="error"></div>
+              </div>
             <div class="col-6">
-                <input class="form-email" type="email" id="email" name="email" placeholder="E-Postanızı Giriniz">
-            </div>
+                <input v-model="formData.email" class="form-email" type="email" id="email" name="email" placeholder="E-Postanızı Giriniz">
+                <div v-if="errors.email" class="error">{{ errors.email }}</div>
+                <div id="error-email" class="error-email"></div>
+              </div>
           </div>
           <div class="row">
             <div class="col-6">
               <label for="yas">Yaş:</label>
-              <input class="form-yas" type="range" id="yas" name="yas" min="1" max="100" value="1" oninput="guncelle(this.value)">
-            <label for="yas" id="deger">1</label>
-            </div>
+              <input v-model="formData.yas" class="form-yas" type="range" id="yas" name="yas" min="0" max="100" value="0" oninput="guncelle(this.value)">
+            <label for="yas" id="deger">0</label>
+            <div v-if="errors.yas" class="error">{{ errors.yas }}</div>
+            <div id="error-yas" class="error"></div>
+          </div>
             <div class="col-6">
               <label for="cinsiyet">Cinsiyet: </label>
-              <input type="radio" id="cinsiyet" name="cinsiyet" value="Erkek" checked>
+              <input v-model="formData.cinsiyet" type="radio" id="erkek" name="cinsiyet" value="Erkek">
               <label for="cinsiyet">Erkek</label>
-              <input type="radio" id="cinsiyet" name="cinsiyet" value="Kadın">
+              <input v-model="formData.cinsiyet" type="radio" id="kadin" name="cinsiyet" value="Kadın">
               <label for="cinsiyet">Kadın</label>
+              <div v-if="errors.cinsiyet" class="error">{{ errors.cinsiyet }}</div>
+              <div id="error-cinsiyet" class="error"></div>
             </div>
           </div>
-            <select  class="form-sehir" id="sehir" name="sehir">
+            <select v-model="formData.sehir" class="form-sehir" id="sehir" name="sehir">
               <option value="" disabled selected>Şehir Seçiniz</option>
               <option value="Adana">Adana</option>
               <option value="Adıyaman">Adıyaman</option>
@@ -185,56 +195,65 @@
               <option value="Yozgat">Yozgat</option>
               <option value="Zonguldak">Zonguldak</option>
             </select>
+            <div v-if="errors.sehir" class="error">{{ errors.sehir }}</div>
+            <div id="error-sehir" class="error"></div>
           <div class="form-yetenek">
             <label for="yetenek">Yetenek: </label>
-            <input type="checkbox" id="yetenek" name="yetenek" value="C">
+            <input v-model="formData.yetenek" type="checkbox" id="yetenek" name="yetenek[]" value="C">
             <label for="yetenek">C</label>
-            <input type="checkbox" id="yetenek" name="yetenek" value="C++">
+            <input v-model="formData.yetenek" type="checkbox" id="yetenek" name="yetenek[]" value="C++">
             <label for="yetenek">C++</label>
-            <input type="checkbox" id="yetenek" name="yetenek" value="C#">
+            <input v-model="formData.yetenek" type="checkbox" id="yetenek" name="yetenek[]" value="C#">
             <label for="yetenek">C#</label>
-            <input type="checkbox" id="yetenek" name="yetenek" value="Python">
+            <input v-model="formData.yetenek" type="checkbox" id="yetenek" name="yetenek[]" value="Python">
             <label for="yetenek">Python</label>
-            <input type="checkbox" id="yetenek" name="yetenek" value="SQL">
+            <input v-model="formData.yetenek" type="checkbox" id="yetenek" name="yetenek[]" value="SQL">
             <label for="yetenek">SQL</label>
-            <input type="checkbox" id="yetenek" name="yetenek" value="HTML">
+            <input v-model="formData.yetenek" type="checkbox" id="yetenek" name="yetenek[]" value="HTML">
             <label for="yetenek">HTML</label>
-            <input type="checkbox" id="yetenek" name="yetenek" value="CSS">
+            <input v-model="formData.yetenek" type="checkbox" id="yetenek" name="yetenek[]" value="CSS">
             <label for="yetenek">CSS</label>
-            <input type="checkbox" id="yetenek" name="yetenek" value="JS">
+            <input v-model="formData.yetenek" type="checkbox" id="yetenek" name="yetenek[]" value="JS">
             <label for="yetenek">JS</label>
-            <input type="checkbox" id="yetenek" name="yetenek" value="PHP">
+            <input v-model="formData.yetenek" type="checkbox" id="yetenek" name="yetenek[]" value="PHP">
             <label for="yetenek">PHP  </label>
-            <input type="checkbox" id="yetenek" name="yetenek" value="Java">
+            <input v-model="formData.yetenek" type="checkbox" id="yetenek" name="yetenek[]" value="Java">
             <label for="yetenek">Java</label>
-            <input type="checkbox" id="yetenek" name="yetenek" value="Scala">
+            <input v-model="formData.yetenek" type="checkbox" id="yetenek" name="yetenek[]" value="Scala">
             <label for="yetenek">Scala</label>
+            <div v-if="errors.yetenek" class="error">{{ errors.yetenek }}</div>
+            <div id="error-yetenek" class="error"></div>
           </div>
           <div class="form-mesaj-baslik">
-            <input list="mesaj-baslik" placeholder="Başlık">
+            <input v-model="formData.mesajbaslik" list="mesaj-baslik" name="mesaj-baslik" id="mesajbaslik" placeholder="Başlık">
             <datalist id="mesaj-baslik">
               <option value="Öneri">Öneri/Dilek</option>
               <option value="Şikayet">Hata/Sorun</option>
               <option value="Diğer">Listede Yok</option>
+              <option value="Genel İletişim">
+              <option value="Proje Önerisi">
             </datalist>
-          </div>
-          <div class="form-dosya">
-            <input type="file" id="dosya" name="dosya">
+            <div v-if="errors.mesajbaslik" class="error">{{ errors.mesajbaslik }}</div>
+            <div id="error-baslik" class="error"></div>
           </div>
           <div class="form-mesaj">
-            <textarea id="mesaj" name="mesaj" rows="5" cols="30" placeholder="Mesajınız"></textarea>
+            <textarea v-model="formData.mesaj" id="mesaj" name="mesaj" rows="5" cols="30" placeholder="Mesajınız"></textarea>
+            <div v-if="errors.mesaj" class="error">{{ errors.mesaj }}</div>
+            <div id="error-mesaj" class="error"></div>
           </div>
-            <input class="gonder-buton" type="submit" value="Gönder">
-            <input class="temizle-buton" type="button" value="Temizle">
+            <input class="button" type="submit" value="Gönder" @click="validateForm">
+            <input class="button" type="button" value="Vue.js Kontrol" @click="validateForm">
+            <input class="button" type="button" value="JS Kontrol" onclick="jskontrol()">
+            <input class="button" type="button" value="Temizle"  @click="resetForm">
         </fieldset>
       </form>
     </div>
+  </div>
   </div>
 </div>
 
 
 
-  
 
 
 <!--İletişim Formu-->
@@ -256,7 +275,6 @@
   
   <!-- FOOTER -->
       <script src="/js/iletisim.js"></script>
-      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
       </body>
     </html> 
