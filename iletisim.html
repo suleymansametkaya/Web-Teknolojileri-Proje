@@ -79,9 +79,11 @@
       <form action="form.php" method="post">
         <fieldset>
           <legend><h2>İletişim Formu</h2><hr></legend>
+          <div>
           <input v-model="formData.adSoyad" class="form-isim" type="text" id="ad-soyad" name="ad-soyad" placeholder="Adınızı ve Soyadınızı Giriniz">
           <div v-if="errors.adSoyad" class="error">{{ errors.adSoyad }}</div>
           <div id="error-isim" class="error"></div>
+        </div>
           <div class="row">
             <div class="col-6">
                 <input v-model="formData.telefon" class="form-telefon" type="tel" name="telefon" id="telefon" placeholder="Telefonunuz">
