@@ -1,0 +1,89 @@
+body{
+    background-image: url(/img/loginbg3.jpg);
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    color: white;
+    padding-top: 100px;
+}
+
+
+*{
+    font-family: kalam,cursive ;
+
+    }
+
+
+.sonuc-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+
+
+.sonuc-panel{
+    width: 400px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    z-index: 2;
+    position: relative; 
+}
+
+
+.sonuc{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
+    line-height: 0.7;
+}
+
+.sonuc-panel::before{
+    content:"" ;
+    position: absolute;
+    width: 400px;
+    height: 300px;
+    border-radius: 30px;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: -1;
+    pointer-events: none;
+}
+
+.sonuc a{
+    color: #ffff;
+}
+
+.sonuc p{
+    text-align: center;
+    line-height: normal;
+}
+
+
+
+@media only screen and (max-width:424px){         
+    .sonuc-panel{
+    width: 300px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    }
+    .sonuc-panel::before{
+    width: 300px;
+    height: 300px;
+    }
+    
+    .sonuc-form{
+    height: 300px;
+    }
+
+    .sonuc h2{
+       font-size: 20px;
+    }
+    
+    .sonuc p{
+        text-align: center;
+        line-height: normal;
+    }
+}

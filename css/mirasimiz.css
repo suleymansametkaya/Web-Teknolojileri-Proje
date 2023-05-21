@@ -1,3 +1,7 @@
+.mirasimiz-container{
+    text-align: center;
+}
+
 .mirasimiz-baslik{
     text-align: center;
     padding-top: 20px;
@@ -22,6 +26,7 @@
     padding-top: 10px;
     padding-bottom: 10px;
     font-size: 18px;
+    text-align: left;
 }
 
 .tanitim{
@@ -32,6 +37,7 @@
 }
 .tanitim p {
     padding: 10px;
+    text-align: left;
 }
 
 .pamukkale{
@@ -75,6 +81,7 @@
 }
 
 .ana-icerik-3 li{
+    text-align: left;
     font-size: 18px;
 }
 
@@ -102,9 +109,175 @@
     transition: transform 0.3s ease;
 }   
 
+/* TABLET RESPONSİVE */
+
+@media only screen and (min-width:767px) and (max-width:890px) {
+    .mirasimiz-baslik{
+        text-align: center;
+        padding-top: 20px;
+        text-transform: uppercase;    
+    }
+
+    
+    .mirasimiz-icerik{
+        align-items: center;
+        padding-left: 10px;
+    
+    }
+    .mirasimiz-icerik p{
+        padding-top: 10px;
+        padding-bottom: 10px;
+        font-size: 30px;
+        text-align: left;
+    }
+    
+    .tanitim{
+        display: block;
+    }
+    .tanitim p {
+        padding: 10px;
+        text-align: left;
+    }
+    
+    h4{
+        font-size: 35px;
+    }
+    .pamukkale{
+        padding: 5px;
+        width: 450px;
+        object-fit: cover;
+    }
+    
+    .ana-icerik-2 .hierapolis{
+        width: 450px;
+       }
+    .ana-icerik-1{
+        margin-top: 20px;  
+    }
+    
+    .ana-icerik-2{
+        display: block;
+    }
+    
+    .ana-icerik-3 li{
+        text-align: left;
+        font-size: 30px;
+    }
+    
+    .foto-galeri{
+        width: 100%;
+        display: grid;
+        margin-bottom: 30px;
+        justify-content: center;
+        grid-template-columns: repeat(auto-fit,300px);
+        gap: 10px;
+    }
+}
+
+/* TABLET RESPONSİVE */
+
+/* 660-767px*/
+@media only screen and (min-width:600px) and (max-width:767px) {
+    .mirasimiz-baslik h1{
+        font-size: 35px;
+        padding-top: 20px;
+    }
+
+    .mirasimiz-baslik hr{
+        max-width: 470px;
+        padding-bottom: 20px;
+    }
+    .mirasimiz-icerik p{
+        font-size: 27px;
+    }
+
+    .tanitim{
+        display: block;
+    }
+    
+
+    .pamukkale{
+        width: 300px;
+    }
+    h4{
+        font-size: 32px;
+    }
+
+    .ana-icerik-2{
+        display: block;
+    }
+
+    .ana-icerik-2 .hierapolis{
+        width: 300px;
+       }
+
+       .ana-icerik-3 li{
+        text-align: left;
+        font-size: 27px;
+    }
+
+    .foto-galeri{
+        grid-template-columns: repeat(2,auto);
+    }
+
+    .foto-galeri img{
+        width: 300px;
+    }
+
+}
 
 
-@media (max-width: 767px) {
+
+
+
+
+
+
+/* 425-660px */ 
+
+@media only screen and (min-width:425px) and (max-width:600px) {
+    .mirasimiz-baslik h1{
+        font-size: 27px;
+        padding-top: 20px;
+    }
+
+    .mirasimiz-baslik hr{
+        max-width: 470px;
+        padding-bottom: 20px;
+    }
+    .mirasimiz-icerik p{
+        font-size: 22px;
+    }
+
+    .tanitim{
+        display: block;
+    }
+    
+
+    .pamukkale{
+        width: 260px;
+    }
+
+    .ana-icerik-2{
+        display: block;
+    }
+
+    .ana-icerik-2 .hierapolis{
+        width: 300px;
+       }
+
+    .foto-galeri{
+        grid-template-columns: repeat(1,auto);
+    }
+
+    .foto-galeri img{
+        width: 260px;
+    }
+}
+
+/* 320px */
+
+@media only screen and (max-width:424px){
     .mirasimiz-baslik h1{
         font-size: 25px;
         padding-top: 20px;
@@ -121,9 +294,7 @@
     
 
     .pamukkale{
-        width: 450px;
-        margin-left: 37px;
-       
+        width: 250px;
     }
 
     .ana-icerik-2{
@@ -131,15 +302,16 @@
     }
 
     .ana-icerik-2 .hierapolis{
-        width: 450px;
-        margin-left: 37px;
-    }
+        width: 300px;
+       }
 
     .foto-galeri{
         grid-template-columns: repeat(1,auto);
     }
 
     .foto-galeri img{
-        width: 450px;
+        width: 250px;
     }
+
+    
 }

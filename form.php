@@ -1,6 +1,20 @@
-<?php
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/form.css">
+    <title>İletişim Formu</title>
+</head>
+<body>
+    
+<div class="sonuc-container">
+    <div class="sonuc-panel">
+        <div class="sonuc">
+        <?php
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Form verilerini al
+
     $adSoyad = $_POST['ad-soyad'];
     $telefon = $_POST['telefon'];
     $email = $_POST['email'];
@@ -13,22 +27,27 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $mesajBaslik = isset($_POST['mesaj-baslik']) ? $_POST['mesaj-baslik'] : "";
     $mesaj = $_POST['mesaj'];
 
-    // Form verilerini işle veya başka bir işlem yap
-    // Örneğin, form verilerini veritabanına kaydetmek, e-posta göndermek vb.
-
-    // Örnek çıktı
-    echo "Ad Soyad: " . $adSoyad . "<br>";
-    echo "Telefon: " . $telefon . "<br>";
-    echo "E-Posta: " . $email . "<br>";
-    echo "Yaş: " . $yas . "<br>";
-    echo "Cinsiyet: " . $cinsiyet . "<br>";
-    echo "Şehir: " . $sehir . "<br>";
+    echo "<h5>İletişim Formu</h5>";
+    echo "<p><b>Ad Soyad: </b>" . $adSoyad . "</p>";
+    echo "<p><b>Telefon: </b>" . $telefon . "</p>";
+    echo "<p><b>E-Posta: </b>" . $email . "</p>";
+    echo "<p><b>Yaş: </b>" . $yas . "</p>";
+    echo "<p><b>Cinsiyet: </b>" . $cinsiyet . "</p>";
+    echo "<p><b>Şehir: </b>" . $sehir . "</p>";
+    echo "<p><b>Yetenek: </b>";
     foreach ($yetenekler as $yetenek) {
-        echo $yetenek . "<br>";
+        echo  $yetenek ." " ;
     }
-    echo "Mesaj Başlık: " . $mesajBaslik . "<br>";
+    echo "<p><b>Mesaj Başlık: </b>" . $mesajBaslik . "</p>";
 
-    echo "Mesaj: " . $mesaj . "<br>";
+    echo "<p><b>Mesaj: </b>" . $mesaj . "</p>";
    
 }
 ?>
+<a class="active" href="index.html"><h6>Ana Sayfaya Dön</h6></a>
+</div>
+</div>
+</div>    
+</body>
+</html>
+

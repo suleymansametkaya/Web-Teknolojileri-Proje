@@ -65,14 +65,11 @@ function guncelle(yas) {
         }
       },
       validateEmail(email) {
-        // Basit bir e-posta doğrulama işlemi yapabilirsiniz
-        // Daha kapsamlı bir doğrulama için regex veya diğer yöntemleri kullanabilirsiniz
         const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         return re.test(email);
       },
       validatePhoneNumber(phoneNumber) {
-        // Türkiye için telefon numarası doğrulama işlemi
-        const re = /^\d{10}$/; // 10 haneli tam sayı kabul ediyoruz
+        const re = /^\d{10}$/; 
         return re.test(phoneNumber);
       },
           updateAge(event) {
@@ -95,7 +92,7 @@ function guncelle(yas) {
           baslik: '',
           mesaj: ''
         };
-
+        this.errors = {};
       }
     }
     
@@ -213,8 +210,8 @@ function jskontrol() {
       return true;
   }
 
+
 function validateAge(age) {
-        // Yaş doğrulama
         const parsedAge = parseInt(age);
         return parsedAge >= 1 && parsedAge <= 100;
       }

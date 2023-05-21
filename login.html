@@ -9,15 +9,14 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link rel="stylesheet" type="text/css" href="css/ilgialanlarim.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" type="text/css" href="css/login.css">
+    <link rel="preconnect" href="https://fonts.googleap is.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap" rel="stylesheet">
-    <title>İlgi Alanlarım</title>
+    <title>Giriş Yap</title>
   </head>
   <body>
 <!-- NAVBAR -->
-      
 <div class="ust"><nav class="navbar navbar-expand-lg navbar-dark bg-dark">      
   <div class="container-fluid">
     <a class="navbar-brand" href="index.html">
@@ -50,7 +49,7 @@
         </li>
       </li>
       <li class="nav-item d-flex align-items-center">
-        <a class="nav-link active" aria-current="page" href="ilgialanlarim.html">İlgi Alanlarım</a>
+        <a class="nav-link" href="ilgialanlarim.html">İlgi Alanlarım</a>
         <span class="ayrac" style="color: white;">|</span>
       </li>
       <li class="nav-item d-flex align-items-center">
@@ -58,28 +57,46 @@
         <span class="ayrac" style="color: white;">|</span>
       </li>
       <li class="nav-item d-flex align-items-center">
-        <a class="nav-link" href="login.html">Giriş Yap</a>
+        <a class="nav-link active" aria-current="page" href="login.html">Giriş Yap</a>
       </li>
       </ul>
     </div>
   </div>
   </nav>
 </div>     
+    
 <!-- NAVBAR -->
 
+<!--Login-->
 
-<!--APİ Veri Çekme-->
-<div class="api-container">
-    <div class="api-container-baslik">
-        <h1><b>NASA GÜNÜN FOTOĞRAFI</b></h1><hr>
-    </div>
-    <div class="api-icerik">
-    <h2 id="api-baslik"></h2>
-    <img id="api-resim" src="" alt="NASA APOD">
-    <p id="api-aciklama"></p>
+<div class="login-container">
+    <div class="login-panel">
+        <form class="login-form" action="login.php" method="post">
+            <h4>GİRİŞ YAP!</h4>
+            <div class="login-input">
+                <i class="fa-solid fa-user"></i>    
+                <input id="email" type="email" name="email" required autocomplete="off" placeholder="Kullanıcı Adı">
+            </div>
+            <div class="login-input">
+                <i class="fa-solid fa-lock"></i>
+                <input id="password" type="password" name="sifre" required autocomplete="off" placeholder="Şifre">
+            </div>
+            <div class="login-button">
+                <input id="giris" type="submit" value="Giriş">
+            </div>
+        </form>
     </div>
 </div>
-<!--APİ Veri Çekme-->
+
+
+
+
+
+
+
+<!--Login-->
+
+
 
 
 <!-- FOOTER -->
@@ -95,10 +112,8 @@
       <a href="https://www.twitch.tv/suleymansametkaya" target="_blank"><i class="fa-brands fa-twitch" style="color: #14EE81;"></i></a>
       <a href="https://www.youtube.com/@suleymansametkaya" target="_blank"><i class="fa-brands fa-youtube" style="color: #14EE81;"></i></a>
     </div></footer>
-    
   
   <!-- FOOTER -->
-      <script src="js/api.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
       <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>

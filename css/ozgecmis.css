@@ -10,36 +10,10 @@ body{
 }
 
 
+
 .ozgecmis-container{
     display: flex;
     flex-direction: row;
-}
-
-
-
-@media only screen and (max-width:768px){
-    .ozgecmis-container{
-        flex-direction: row;
-    }
-
-    .ozgecmis-bilgiler{
-        padding: 50px 20px;
-        min-height: 800px;
-    }
-
-    .ozgecmis-bilgiler .ozgecmis-profil .profil-bilgiler{
-        margin: 50px 0;
-    }
-    
-    .ozgecmis-bilgiler:first-child{
-        background-color: #14EE81; 
-        max-width:100px;
-        color: #f1fbff;
-    }
-    .ozgecmis-bilgiler .ozgecmis-profil img{
-        width: 150px;
-
-    }
 }
 
 .ozgecmis-bilgiler{
@@ -76,12 +50,12 @@ body{
     margin: 0 0 20px 0;
     color: #002A3B;
     font-weight: 600;
-    font-size: 13px;
+    font-size: 15px;
 }
 
 .ozgecmis-sol-bar .baslik{
     position: relative;
-    font-size: 16px;
+    font-size: 17px;
     margin: 0;
     font-weight: 600;
     letter-spacing: 2px;
@@ -102,13 +76,146 @@ body{
 }
 
 .ozgecmis-bilgiler:last-child{
-    padding-top: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 .ozgecmis-bilgiler:last-child h2{
-font-size: 30px;
+    padding-top: 20px;
+    font-size: 30px;
 }
 
 .ozgecmis-bilgiler:last-child li{
-    font-size: 20px;
+    font-size: 23px;
 }
 
+
+
+
+/*Resposive*/
+
+@media only screen and (min-width:319px) and (max-width:374px) {
+    .ozgecmis-bilgiler{
+        padding: 20px 20px;
+    }
+    .ozgecmis-bilgiler .ozgecmis-profil img{
+        width: 130px;
+        padding: 5px;
+
+    }
+    .ozgecmis-bilgiler:first-child{
+        max-width:170px;
+    }
+
+    .ozgecmis-bilgiler .ozgecmis-profil .profil-bilgiler{
+        font-size: 14px;
+    }
+
+    .ozgecmis-sol-bar{
+        font-size: 14px;
+    }
+
+    .ozgecmis-sol-bar .baslik{
+        text-align: center;
+        font-size: 14px;
+    }
+
+    .ozgecmis-bilgiler:last-child h2{
+        padding-top: 20px;
+        font-size: 18px;
+    }
+
+    .ozgecmis-bilgiler:last-child li{
+        font-size: 12px;
+    }
+    .alt-satir{
+        display: inline-block;
+    }
+
+}
+
+
+@media only screen and (min-width:374px) and (max-width:424px) {
+    .ozgecmis-bilgiler{
+        padding: 20px 20px;
+    }
+    .ozgecmis-bilgiler .ozgecmis-profil img{
+        width: 130px;
+        padding: 5px;
+
+    }
+    .ozgecmis-bilgiler:first-child{
+        max-width:185px;
+    }
+
+    .ozgecmis-bilgiler .ozgecmis-profil .profil-bilgiler{
+        font-size: 17px;
+    }
+
+    .ozgecmis-sol-bar{
+        font-size: 16px;
+    }
+
+    .ozgecmis-sol-bar .baslik{
+        text-align: center;
+        font-size: 17px;
+    }
+
+    .ozgecmis-bilgiler:last-child h2{
+        padding-top: 20px;
+        font-size: 18px;
+    }
+
+    .ozgecmis-bilgiler:last-child li{
+        font-size: 19px;
+        padding-top: 5px;
+    }
+    .ozgecmis-bilgiler:last-child .egitim .alt-satir{
+       display: inline-block;
+    }
+    .alt-satir{
+        display: inline-block;
+    }
+
+}
+
+
+@media only screen and (min-width:424px) and (max-width:767px) {
+    .ozgecmis-bilgiler{
+        padding: 20px 20px;
+    }
+    .ozgecmis-bilgiler .ozgecmis-profil img{
+        width: 130px;
+        padding: 5px;
+
+    }
+    .ozgecmis-bilgiler:first-child{
+        max-width:185px;
+    }
+
+    .ozgecmis-bilgiler .ozgecmis-profil .profil-bilgiler{
+        font-size: 17px;
+    }
+
+    .ozgecmis-sol-bar{
+        font-size: 16px;
+    }
+
+    .ozgecmis-sol-bar .baslik{
+        text-align: center;
+        font-size: 17px;
+    }
+
+    .ozgecmis-bilgiler:last-child h2{
+        padding-top: 20px;
+        font-size: 18px;
+    }
+
+    .ozgecmis-bilgiler:last-child li{
+        font-size: 21px;
+        padding-top: 5px;
+    }
+    .alt-satir{
+        display: inline-block;
+    }
+
+}

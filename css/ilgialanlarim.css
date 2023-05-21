@@ -20,12 +20,131 @@
   background-color: #002a3b;
   padding: 10px;
   border-radius: 3%;
-  height: 500px;
-  width: 80%;
+  height: 450px;
+  width: 70%;
 }
 
 .api-icerik p {
+  text-align: justify;
   margin: 20px;
   padding: 10px;
   font-size: 20px;
+}
+
+
+
+@media only screen and (max-width:424px){  
+  .api-container-baslik h1 {
+    font-size: 26px;
+  }
+  
+  .api-icerik h2 {
+    padding-bottom: 10px;
+    font-size: 25px;
+  }
+  
+  .api-icerik img {
+    background-color: #002a3b;
+    padding: 10px;
+    border-radius: 3%;
+    height: 300px;
+    width: 80%;
+  }
+  
+  .api-icerik p {
+    text-align:justify;
+    font-size: 18px;
+  }
+}
+
+@media only screen and (min-width:425px) and (max-width:600px) {
+  .api-container-baslik h1 {
+    font-size: 28px;
+  }
+  
+  .api-icerik h2 {
+    padding-bottom: 10px;
+    font-size: 27px;
+  }
+  
+  .api-icerik img {
+    height: 300px;
+    width: 80%;
+  }
+  
+  .api-icerik p {
+    text-align:justify;
+    font-size: 22px;
+  }
+
+
+
+}
+
+@media only screen and (min-width:600px) and (max-width:767px) {
+  .api-container-baslik h1 {
+    font-size: 26px;
+  }
+  
+  .api-icerik h2 {
+    padding-bottom: 10px;
+    font-size: 25px;
+  }
+  
+  .api-icerik img {
+    background-color: #002a3b;
+    padding: 10px;
+    border-radius: 3%;
+    height: 300px;
+    width: 80%;
+  }
+  
+  .api-icerik p {
+    text-align:justify;
+    font-size: 18px;
+  }
+}
+
+@media only screen and (min-width:425px) and (max-width:600px) {
+  .api-container-baslik h1 {
+    font-size: 30px;
+  }
+  
+  .api-icerik h2 {
+    padding-bottom: 10px;
+    font-size: 30px;
+  }
+  
+  .api-icerik img {
+    height: 350px;
+    width: 80%;
+  }
+  
+  .api-icerik p {
+    text-align:justify;
+    font-size: 25px;
+  }
+
+}
+
+@media only screen and (min-width:767px) and (max-width:890px) {
+
+  .api-container-baslik h1 {
+    font-size: 30px;
+  }
+  
+  .api-icerik h2 {
+    padding-bottom: 10px;
+    font-size: 30px;
+  }
+  
+  .api-icerik img {
+    height: 370px;
+    width: 80%;
+  }
+  
+  .api-icerik p {
+    text-align:justify;
+    font-size: 25px;
+  }
 }
