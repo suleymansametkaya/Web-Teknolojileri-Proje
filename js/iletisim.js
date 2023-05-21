@@ -27,37 +27,37 @@ function guncelle(yas) {
         
         this.errors = {};
         if (!this.formData.adSoyad) {
-          this.errors.adSoyad = 'Adınızı ve soyadınızı giriniz.';
+          this.errors.adSoyad = 'Adınızı ve soyadınızı giriniz!';
         }
         if (!this.formData.email) {
-          this.errors.email = 'E-posta adresinizi giriniz.';
+          this.errors.email = 'E-posta adresinizi giriniz!';
         } else if (!this.validateEmail(this.formData.email)) {
-          this.errors.email = 'Geçerli bir e-posta adresi giriniz.';
+          this.errors.email = 'Geçerli bir e-posta adresi giriniz!';
         }
         if (!this.formData.telefon) {
-          this.errors.telefon = 'Telefon numaranızı giriniz.';
+          this.errors.telefon = 'Telefon numaranızı giriniz!';
         } else if (!this.validatePhoneNumber(this.formData.telefon)) {
-          this.errors.telefon = 'Geçerli bir telefon numarası giriniz.';
+          this.errors.telefon = 'Geçerli bir telefon numarası giriniz!';
         }
         if (!this.formData.yas) {
-          this.errors.yas = 'Yaşınızı giriniz.';
+          this.errors.yas = 'Yaşınızı giriniz!';
         } else if (!this.validateAge(this.formData.yas)) {
-          this.errors.yas = 'Geçerli bir yaş giriniz.';
+          this.errors.yas = 'Geçerli bir yaş giriniz!';
         }
         if (!this.formData.cinsiyet) {
-        this.errors.cinsiyet = 'Cinsiyetinizi seçiniz.';
+        this.errors.cinsiyet = 'Cinsiyetinizi seçiniz!';
         }
         if (!this.formData.yetenek || this.formData.yetenek.length === 0) {
-          this.errors.yetenek = 'En az bir yetenek seçiniz.';
+          this.errors.yetenek = 'En az bir yetenek seçiniz!';
         }
         if (!this.formData.sehir) {
-            this.errors.sehir = 'Lütfen şehir seçin.';
+            this.errors.sehir = 'Lütfen şehir seçiniz!';
           }
         if (!this.formData.mesajbaslik) {
-          this.errors.mesajbaslik = 'Lütfen bir başlık girin.';
+          this.errors.mesajbaslik = 'Lütfen bir başlık giriniz!';
         }
         if (!this.formData.mesaj) {
-        this.errors.mesaj = 'Lütfen bir mesaj girin.';
+        this.errors.mesaj = 'Lütfen bir mesaj giriniz!';
         }
         
         if (Object.keys(this.errors).length > 0) {
@@ -65,14 +65,11 @@ function guncelle(yas) {
         }
       },
       validateEmail(email) {
-        // Basit bir e-posta doğrulama işlemi yapabilirsiniz
-        // Daha kapsamlı bir doğrulama için regex veya diğer yöntemleri kullanabilirsiniz
         const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         return re.test(email);
       },
       validatePhoneNumber(phoneNumber) {
-        // Türkiye için telefon numarası doğrulama işlemi
-        const re = /^\d{10}$/; // 10 haneli tam sayı kabul ediyoruz
+        const re = /^\d{10}$/; 
         return re.test(phoneNumber);
       },
           updateAge(event) {
@@ -95,7 +92,7 @@ function guncelle(yas) {
           baslik: '',
           mesaj: ''
         };
-
+        this.errors = {};
       }
     }
     
@@ -123,7 +120,7 @@ function jskontrol() {
   var mesajhata = document.getElementById('error-mesaj');
   var enAzBirSecildi = false;
   if (isim.value === "") {
-      isimhata.innerText = "Ad alanı boş bırakılamaz!";
+      isimhata.innerText = "Adınızı ve soyadınızı giriniz!";
       return false;
   }
   else{
@@ -131,53 +128,53 @@ function jskontrol() {
   }
 
   if (email.value === "") {
-      emailhata.innerText = "E-posta alanı boş bırakılamaz!";
+      emailhata.innerText = "E-posta adresinizi giriniz!";
       return false;
   }
 
   var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (!emailRegex.test(email.value)) {
-      emailhata.innerText = "Geçerli bir e-posta adresi girin!";
+      emailhata.innerText = "Geçerli bir e-posta adresi giriniz!";
       return false;
   }
   else{
     emailhata.innerText=""
   }
   if (telefon.value === "") {
-      telefonhata.innerText = "Telefon alanı boş bırakılamaz!";
+      telefonhata.innerText = "Telefon numaranızı giriniz!";
       return false;
   }
 
   var telefonRegex = /^\d{10}$/;
   if (!telefonRegex.test(telefon.value)) {
-      telefonhata.innerText = "Geçerli bir telefon no girin!";
+      telefonhata.innerText = "Geçerli bir telefon numarası giriniz!";
       return false;
   }
   else{
     telefonhata.innerText=""
   }
   if (yas.value === "") {
-      yashata.innerText = "Yaş alanı boş bırakılamaz!";
+      yashata.innerText = "Yaşınızı giriniz!";
       return false;
   }
 
   var parsedAge = parseInt(yas.value);
   if (isNaN(parsedAge) || parsedAge < 1 || parsedAge > 100) {
-      yashata.innerText = "Lütfen geçerli bir yaş giriniz!";
+      yashata.innerText = "Geçerli bir yaş giriniz!";
       return false;
   }
   else{
     yashata.innerText=""
   }
   if (!erkek.checked && !kadin.checked) {
-  cinsiyethata.innerText = "Cinsiyet alanı boş bırakılamaz!";
+  cinsiyethata.innerText = "Cinsiyetinizi seçiniz!";
   return false;
   } 
   else {
       cinsiyethata.innerText = "";
   }
   if (sehir.value ==="" || sehir.value==="Şehir Seçiniz") {
-  sehirhata.innerText = "Sehir alanı boş bırakılamaz!";
+  sehirhata.innerText = "Lütfen şehir seçiniz!";
   return false;
   }
   else{
@@ -191,21 +188,21 @@ function jskontrol() {
   }
 
   if (!enAzBirSecildi) {
-      yetenekhata.innerText = "En az bir yetenek seçilmelidir!";
+      yetenekhata.innerText = "En az bir yetenek seçiniz!";
       return false;
   } 
   if (enAzBirSecildi) {
       yetenekhata.innerText = "";
   }
   if (mesajbaslik.value === "") {
-  mesajbaslikhata.innerText = "Mesaj Başlık alanı boş bırakılamaz!";
+  mesajbaslikhata.innerText = "Lütfen bir başlık giriniz!";
   return false;
   } 
   else {
       mesajbaslikhata.innerText = "";
   }
   if (mesaj.value === "") {
-      mesajhata.innerText = "Mesaj alanı boş bırakılamaz!";
+      mesajhata.innerText = "Lütfen bir mesaj giriniz!";
       return false;
   } else {
       mesajhata.innerText = "";
@@ -213,8 +210,8 @@ function jskontrol() {
       return true;
   }
 
+
 function validateAge(age) {
-        // Yaş doğrulama
         const parsedAge = parseInt(age);
         return parsedAge >= 1 && parsedAge <= 100;
       }
